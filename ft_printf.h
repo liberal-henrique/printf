@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:55:47 by lliberal          #+#    #+#             */
-/*   Updated: 2022/11/15 23:08:43 by lliberal         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:53:03 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdint.h>
+# include <limits.h>
 
-typedef struct s_prnt
-{
-	va_list	*args;
-	char	*format;
-}			t_prnt;
+typedef unsigned long long	t_ull;
 
+int	ft_putstr_counter(char *str);
+int	ft_putchar_counter(char c);
+int	ft_pointer(uintptr_t num);
+int	convert(double p, char *base, double size_base);
 int	ft_printf(const	char *format, ...);
-int	ft_putchar_counter(char *str);
-int	conversion_int(int p, char *base, int size_base);
 
 #endif
