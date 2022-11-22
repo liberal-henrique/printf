@@ -1,11 +1,8 @@
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS	= ft_printf.c \
-		  ft_printf_utils.c \
-		  main.c
+		  ft_printf_utils.c
 
-PROG	= printfTest
-PROG_OBJ = main.o
 OBJS	= $(SRCS:.c=.o)
 NAME	= libftprintf.a
 NAME_PATH = ./
@@ -31,7 +28,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) printfTest
+	$(RM) $(NAME)
 
 re: fclean all
 
