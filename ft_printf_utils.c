@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:13:01 by lliberal          #+#    #+#             */
-/*   Updated: 2022/11/22 23:00:58 by lliberal         ###   ########.fr       */
+/*   Updated: 2022/11/22 23:32:32 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,22 @@ int	convert(double p, char *base, double size_base)
 	return (count);
 }
 
-int	convert_pointer(uintptr_t p, char *base, uintptr_t size_base)
+int	convert_pointer(uintptr_t p, char *base, uintptr_t size_base, int flag)
 {
 	int	count;
 
 	count = 0;
 	if (p == 0)
 		return (ft_putstr_counter("(nil)"));
+	if (flag == 0)
+	{
+		count = ft_putstr_counter("0x");
+		flag++;
+	}
 	if (p >= size_base)
-		count += convert_pointer(p / size_base, base, size_base);
+		count += convert_pointer(p / size_base, base, size_base, flag++);
 	count += write(1, &base[(p) % (size_base)], 1);
+	flag++;
 	return (count);
 }
 
