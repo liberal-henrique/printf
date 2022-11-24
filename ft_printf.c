@@ -12,36 +12,6 @@
 
 #include "ft_printf.h"
 
-// int	ft_check(const char fmt, va_list args)
-// {
-// 	int			count;
-// 	uintptr_t	num;
-
-// 	count = 0;
-// 	if (fmt == 'c')
-// 		count = ft_putchar_counter(va_arg(args, int));
-// 	if (fmt == 's')
-// 		count = ft_putstr_counter(va_arg(args, char *));
-// 	if (fmt == '%')
-// 		count = ft_putchar_counter('%');
-// 	if (fmt == 'd' || fmt == 'i')
-// 		count = convert(va_arg(args, int), "0123456789", 10);
-// 	if (fmt == 'u')
-// 		count = convert(va_arg(args, unsigned int), "0123456789", 10);
-// 	if (fmt == 'x')
-// 		count = convert(va_arg(args, unsigned int), "0123456789abcdef", 16);
-// 	if (fmt == 'X')
-// 		count = convert(va_arg(args, unsigned int), "0123456789ABCDEF", 16);
-// 	if (fmt == 'p')
-// 	{
-// 		num = va_arg(args, uintptr_t);
-// 		if (num != 0)
-// 			count = ft_putstr_counter("0x");
-// 		count += convert_pointer(num, "0123456789abcdef", 16);
-// 	}
-// 	return (count);
-// }
-
 int	ft_check(const char fmt, va_list args)
 {
 	int		count;

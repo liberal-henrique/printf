@@ -32,11 +32,8 @@ int	convert_pointer(uintptr_t p, char *base, uintptr_t size_base, int flag)
 	count = 0;
 	if (p == 0)
 		return (ft_putstr_counter("(nil)"));
-	if (flag == 0)
-	{
+	if (flag++ == 0)
 		count = ft_putstr_counter("0x");
-		flag++;
-	}
 	if (p >= size_base)
 		count += convert_pointer(p / size_base, base, size_base, flag++);
 	count += write(1, &base[(p) % (size_base)], 1);
@@ -60,14 +57,3 @@ int	ft_putchar_counter(char c)
 {
 	return (write(1, &c, 1));
 }
-
-// int	ft_pointer(uintptr_t num)
-// {
-// 	int	count;
-
-// 	if (num == 0)
-// 		return (ft_putstr_counter("(nil)"));
-// 	count = ft_putstr_counter("0x");
-// 	count += convert_pointer(num, "0123456789abcdef", 16);
-// 	return (count);
-// }
